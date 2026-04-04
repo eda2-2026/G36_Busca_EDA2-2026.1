@@ -1,4 +1,3 @@
-ou
 # SwiftPay
 
 Sistema web para auditoria e análise de transações financeiras com filtros por categoria, merchant, data e valor.
@@ -10,15 +9,25 @@ Sistema web para auditoria e análise de transações financeiras com filtros po
 - data/ — arquivo JSON com as transações
 - scripts/ — utilitários para gerar dados
 
+## Estrutura atual
+
+- backend/app.py
+- backend/config.py
+- backend/search_algorithms.py
+- frontend/index.html
+- frontend/css/style.css
+- frontend/js/main.js
+- data/transactions.json
+
 ## Como executar
 
-1. Instalar dependências
+1. Entrar na pasta do projeto
 
 ```bash
-pip3 install -r requirements.txt
+cd SwiftPay
 ```
 
-2. Gerar os dados
+2. Gerar os dados, se necessário
 
 ```bash
 python3 scripts/generate_data.py
@@ -27,7 +36,7 @@ python3 scripts/generate_data.py
 3. Iniciar a aplicação
 
 ```bash
-python3 run.py
+python3 backend/app.py
 ```
 
 Depois, acessar:

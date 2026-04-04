@@ -13,7 +13,7 @@ from config import Config
 from search_algorithms import SearchEngine
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = BASE_DIR / "frontend"
 DATA_FILE = BASE_DIR / "data" / "transactions.json"
 
