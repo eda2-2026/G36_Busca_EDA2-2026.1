@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftPay - Sistema de Auditoria de Transações Financeiras</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">💳 SwiftPay</h1>
+                <p class="tagline">Sistema de Auditoria e Análise de Transações Financeiras</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar com Filtros -->
+            <aside class="sidebar">
+                <div class="filters-section">
+                    <h2>🔍 Filtros</h2>
+                    
+                    <!-- Filtro de Categoria -->
+                    <div class="filter-group">
+                        <label for="category-filter">Categoria</label>
+                        <select id="category-filter">
+                            <option value="">Todas as categorias</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro de Merchant -->
+                    <div class="filter-group">
+                        <label for="merchant-filter">Merchant</label>
+                        <select id="merchant-filter">
+                            <option value="">Todos os merchants</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro de Data -->
+                    <div class="filter-group">
+                        <label for="start-date">Data Inicial</label>
+                        <input type="date" id="start-date">
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="end-date">Data Final</label>
+                        <input type="date" id="end-date">
+                    </div>
+
+                    <!-- Filtro de Valor -->
+                    <div class="filter-group">
+                        <label for="min-amount">Valor Mínimo (R$)</label>
+                        <input type="number" id="min-amount" min="0" step="0.01" placeholder="0.00">
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="max-amount">Valor Máximo (R$)</label>
+                        <input type="number" id="max-amount" min="0" step="0.01" placeholder="999999.99">
+                    </div>
+
+                    <!-- Botões -->
+                    <div class="filter-buttons">
+                        <button id="search-btn" class="btn btn-primary">🔎 Buscar</button>
+                        <button id="reset-btn" class="btn btn-secondary">↻ Limpar</button>
+                    </div>
+
+                    <!-- Info de Performance -->
+                    <div class="performance-info">
+                        <h3>⚡ Performance</h3>
+                        <p id="search-time">Tempo: -</p>
+                        <p id="result-count">Resultados: -</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <section class="content">
+                <!-- Statistics Cards -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>Total de Transações</h3>
+                        <p class="stat-value" id="total-transactions">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Gasto</h3>
+                        <p class="stat-value" id="total-amount">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Média por Transação</h3>
+                        <p class="stat-value" id="average-amount">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Maior Gasto</h3>
+                        <p class="stat-value" id="max-amount-stat">-</p>
+                    </div>
+                </div>
+
+                <!-- Transactions Table -->
+                <div class="transactions-section">
+                    <h2>📋 Transações</h2>
+                    
+                    <div class="table-container">
+                        <table id="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Merchant</th>
+                                    <th>Categoria</th>
+                                    <th>Valor</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactions-body">
+                                <tr>
+                                    <td colspan="5" class="loading">Carregando...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button id="prev-page" class="btn btn-small">← Anterior</button>
+                        <span id="page-info">Página 1</span>
+                        <button id="next-page" class="btn btn-small">Próxima →</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>SwiftPay © 2026 | Projeto de EDA2 - Busca Indexada e Busca Binária</p>
+        </footer>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
